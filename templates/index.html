@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predictive Maintenance</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+<div class="login">
+	<h1>Failure prediction</h1>
+
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Type" placeholder="Type"required" />
+        <input type="text" name="Air temperature [K]" placeholder="Air_temperature" required="required" />
+		<input type="text" name="Process temperature [K]" placeholder="Process temperature" required="required" />
+		<input type="text" name="Torque [Nm]" placeholder="Torque" required="required" />
+        <input type="text" name="Tool wear [min]" placeholder="Tool wear" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
